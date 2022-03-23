@@ -1,0 +1,97 @@
+
+.image{
+    width: 90vh;
+    height: 40vh;
+    padding-left: 20px;
+    
+}
+
+.avatar{
+    width: 40%;
+    height: 90%;
+    padding-left: -100px;
+}
+
+.profile{
+    font-size: 30px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: -20px;
+}
+
+input{
+    margin-top: 20px;
+    width: 100%;
+    outline: none;
+    height: 70px;
+    border: 1px solid rgb(233, 233, 233);
+    background-color: rgb(233, 233, 233);
+    border-radius: 20px;
+    font-size: 15px;
+    margin-bottom: 50px;
+    position: relative;
+    
+}
+
+input::-webkit-input-placeholder{
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+input::-moz-placeholder{
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+input:-ms-input-placeholder{
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+input::-ms-input-placeholder{
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+input::placeholder{
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+.posts{
+    padding-top: 30px;
+    font-size: 40px;
+}
+
+.post{
+    padding-top: 30px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.post::before{
+    content: '';
+    border: 1px solid rgb(255, 230, 0);
+    border-radius: 20px;
+    padding: 5px 18px;
+    background-color: rgb(255, 230, 0);
+    margin-right: 10px;
+    
+    
+}
+
+.button{
+    display: flex;
+    justify-content: flex-end;
+}
+
+button{
+    background-color: rgb(18, 194, 18);
+    outline: none;
+    border: 1px solid rgb(18, 194, 18);
+    border-radius: 20px;
+    padding: 20px 60px;
+    font-size: 20px;
+    color: white;
+}

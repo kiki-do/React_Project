@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
+import {  Routes, Route} from 'react-router-dom';
 import './App.css';
+import Dialog from './components/Dialog/Dialog';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Profile from './components/Profile/Profile';
+import News from './components/News/News';
+import Music from './components/Music/Music';
+import Settings from './components/Settings/Settings';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className='app-wrapper'>
+        <Header />
+        <Navbar />
+        
+        <div className='app-wrapper-all'>
+				<Routes>
+          <Route path="/profile" element = {<Profile />}/>
+          <Route path="/dialog" element = {<Dialog photo= "http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg" from= "Kate" message = "Hi:) Nice to Meet you "/>}/>
+          <Route path="/news" element = {<News news__message='Что происходит в мире?'/>}/>
+          <Route path="/news" element = {<News news__message='Что происходит в мире?'/>}/>
+          <Route path="/music" element = {<Music />}/>
+          <Route path="/settings" element = {<Settings />}/>
+        </Routes>
+        </div>
+      </div>
+  )
 }
+
 
 export default App;
