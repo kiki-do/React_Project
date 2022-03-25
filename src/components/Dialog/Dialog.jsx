@@ -1,22 +1,25 @@
 import React from "react";
-import s from './Dialog.module.css'
+import s from './Dialog.module.css';
+import Users from "./Users/Users";
+import Message from "./Message/Message";
 
 const Dialog = (props) => {
+    
+    let messageElements =  props.state.messages.map(props => <Message message={props.message} />) 
+
+    let dialogElements =  props.state.dialog.map(props => <Users name={props.name} id={props.id} />) 
+
+
     return(
-        <div className={s.dialog}>
+        // Исправить кол-во className - это не красиво удалить один из
+        <div className={s.dialog}> 
             <div className={s.content}>
                 <div className={s.users}>
-                    Dialogs
-                    <div className={s.users__name}>Andrew</div>
-                    <div className={s.users__name}>Dmitriy</div>
-                    <div className={s.users__name}>Sasha</div>
-                    <div className={s.users__name}>Sveta</div>
-                    <div className={s.users__name}>Valera</div>
-                    <div className={s.users__name}>Viktor</div>
-                    <div className={s.users__name}>This is list item</div>
-                    <div className={s.users__name}>Another list item</div>
-                    <div className={s.users__name}></div>
-                    <div className={s.users__name}></div>
+                    <h1>Dialogs</h1>
+                    {dialogElements}
+                </div>
+                <div className={s.messages}>
+                   {messageElements}
                 </div>
             </div>
         </div>

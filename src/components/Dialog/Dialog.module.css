@@ -1,18 +1,16 @@
 .dialog{
     display: flex;
     flex-direction: row;
+    margin-left: 20px;
 }
 
 .content{
-    border: 1px solid #dddddd;
-    background-color: #dddddd;
     font-size: 20px;
-    width: 50%;
-    height: 120px;
     border-radius: 20px;
     margin-bottom: 20px;
     justify-content: flex-start;
     display: flex;
+    gap: 220px;
     flex-direction: row;
     padding-bottom: -20px;
 
@@ -26,10 +24,16 @@
 .photo{
     position: relative;
     display: flex;
-    /* justify-content: left; */
     height: 200px;
     width: 200px;
+}
+
+h1{
+    font-size: 25px;
+}
 
 
-
+.messages{
+    margin-top: 60px;
+    max-width: 350px;
 }

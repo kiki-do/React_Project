@@ -1,0 +1,7 @@
+.messages__user{
+    text-align: center;
+    border: 3px solid grey;
+    margin-bottom: 60px;
+    padding: 20px 30px;
+    border-radius: 15px;
+}

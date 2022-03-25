@@ -10,7 +10,8 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
 
-const App = () => {
+const App = (props) => {
+  
   return (
       <div className='app-wrapper'>
         <Header />
@@ -18,9 +19,8 @@ const App = () => {
         
         <div className='app-wrapper-all'>
 				<Routes>
-          <Route path="/profile" element = {<Profile />}/>
-          <Route path="/dialog" element = {<Dialog photo= "http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg" from= "Kate" message = "Hi:) Nice to Meet you "/>}/>
-          <Route path="/news" element = {<News news__message='Что происходит в мире?'/>}/>
+          <Route path="/profile" element = {<Profile state={props.state.profilesPage} />}/>
+          <Route path="/dialog/*" element = {<Dialog state={props.state.dialogsPage} photo= "http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg"/>}/>
           <Route path="/news" element = {<News news__message='Что происходит в мире?'/>}/>
           <Route path="/music" element = {<Music />}/>
           <Route path="/settings" element = {<Settings />}/>
