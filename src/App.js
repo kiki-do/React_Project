@@ -19,7 +19,7 @@ const App = (props) => {
         
         <div className='app-wrapper-all'>
 				<Routes>
-          <Route path="/profile" element = {<Profile state={props.state.profilesPage} />}/>
+          <Route path="/profile" element = {<Profile state={props.state.profilesPage} addPost={props.addPost}/>}/>
           <Route path="/dialog/*" element = {<Dialog state={props.state.dialogsPage} photo= "http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg"/>}/>
           <Route path="/news" element = {<News news__message='Что происходит в мире?'/>}/>
           <Route path="/music" element = {<Music />}/>
@@ -27,6 +27,7 @@ const App = (props) => {
         </Routes>
         </div>
       </div>
+      
   )
 }
 

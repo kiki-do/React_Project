@@ -5,9 +5,16 @@ import Message from "./Message/Message";
 
 const Dialog = (props) => {
     
-    let messageElements =  props.state.messages.map(props => <Message message={props.message} />) 
+    let messageElements =  props.state.messages.map(props => <Message message={props.message} />);
+    let dialogElements =  props.state.dialog.map(props => <Users name={props.name} id={props.id} />);
 
-    let dialogElements =  props.state.dialog.map(props => <Users name={props.name} id={props.id} />) 
+
+    let newMessageElement = React.createRef();
+
+    let sendMessage = () => {
+        let text = newMessageElement.current.value;
+        alert(text);
+    }
 
 
     return(
@@ -20,6 +27,12 @@ const Dialog = (props) => {
                 </div>
                 <div className={s.messages}>
                    {messageElements}
+                   <div>
+                       <textarea ref={newMessageElement}></textarea>
+                    </div>
+                   <div>
+                       <button onClick={sendMessage} className={s.btn}>Send</button>
+                    </div>
                 </div>
             </div>
         </div>
