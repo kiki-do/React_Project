@@ -30,10 +30,27 @@ let store = {
                                 {message: 'saassa.'}
                                 ]},
 
-                                newMessageText: ' ' 
+                                newMessageText: ' ',
 
+                friendsPage: {
+                                user: [{name: "Dmitriy K", id: 1},
+                                        {name: "Svetlana D",id: 2},
+                                        {name: "Sergei S",id: 3},
+                                        {name: "Andrew T", id: 5}],
+
+                                description: [{message: "I`m looking a job right now..."},
+                                                {message: "I`m so pretty"},
+                                                {message: "I like football !!!"},
+                                                {message: "I am free to help you to create the good Video Poduction"}],
+                                
+                                countries:      [{country: "Belarus, Minsk"},
+                                                {country: "Belarus, Minsk"},
+                                                {country: "Ukraine, Kiev"},
+                                                {country: "USA, Philadelphia"}],
+                },
 
         },
+        
 
         _callSubscriber(){
                 console.log('State was changed!')

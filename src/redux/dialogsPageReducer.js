@@ -1,20 +1,40 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
 const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
 
+let initialState = {dialog: [{name: 'Andrew', id: 1},
+                 {name: 'Dmitriy', id: 2},
+                 {name: 'Sasha', id: 3},
+                {name: 'Sveta', id: 4},
+                {name: 'Valera', id: 5},
+                {name: 'Viktor', id: 6}],
+
+                messages: [{message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
+                {message:'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
+                {message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
+                {message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
+                {message: 'saassa.'},
+                {message: 'saassa.'}
+                ],
+
+                newMessageText: ' ' }
 
 
-
-const dialogsPageReducer = (state, action) => {
+const dialogsPageReducer = (state=initialState, action) => {
     switch(action.type){
-        case ADD_MESSAGE:
+        case ADD_MESSAGE:{
             let newMessage = state.newMessageText
-            state.newMessageText = ' ';
-            state.messages.push({message: newMessage});
-            return state;
+            let stateCopy =  {...state};
+            stateCopy.messages = [...state.messages];
+            stateCopy.newMessageText = ' ';
+            stateCopy.messages.push({message: newMessage});
+            return stateCopy;
+        }
 
-        case UPDATE_MESSAGE_TEXT:
-            state.newMessageText = action.newMessage;
-            return state;
+        case UPDATE_MESSAGE_TEXT:{
+            let stateCopy =  {...state};
+            stateCopy.newMessageText = action.newMessage;
+            return stateCopy;
+        }
 
         default: return state;
     }
