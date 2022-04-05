@@ -1,4 +1,9 @@
 img{
     width:20%;
     height: 20%;
+    font-weight: 300;
+}
+
+.selectedPage{
+    font-weight: 700;
 }

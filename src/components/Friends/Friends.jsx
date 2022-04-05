@@ -1,7 +1,14 @@
 import React from "react";
 import s from './Friends.module.css'
+import * as axios from 'axios'
 
 const Friends  = (props) => {
+    if(props.friends.length === 0){
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response =>{
+            props.setUser(response.data.items);
+
+        })   
+    }   
     return(
     <div>
         {
@@ -17,12 +24,12 @@ const Friends  = (props) => {
             </span>
             <span>
                 <span>
-                    <div>{u.fullname}</div>
+                    <div>{u.name}</div>
                     <div>{u.status}</div>
                 </span>
                 <span>
-                    <div>{u.location.city}</div>
-                    <div>{u.location.country}</div>
+                    <div>{"u.location.city"}</div>
+                    <div>{"u.location.country"}</div>
                 </span>
             </span>
             </div>)

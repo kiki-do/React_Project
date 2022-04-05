@@ -1,17 +1,16 @@
 const FOLLOW = "FOLLOW"
 const UNFOLLOW = "UNFOLLOW"
 const SET_USERS = "SET_USERS"
+const SET_CURRENT_PAGE = "SET_CURRENT_PAGE"
 
 
 let initialState = {
-    friends: [
-        {id: 1, photoUrl: "https://sun9-38.userapi.com/impf/kEZoN0leykKAeghQGTk_TFt2mo7_eBbuDxDrWg/a4zgUsqKZ6U.jpg?size=867x867&quality=95&sign=edd8340edddc046be371362ff7cdd5cf&type=album", followed: false, fullname: 'Dmitriy', status: 'Hi how are you?',  location: {city: "Minsk", country: "Belarus"}},
-        {id: 2, photoUrl: "https://sun9-38.userapi.com/impf/kEZoN0leykKAeghQGTk_TFt2mo7_eBbuDxDrWg/a4zgUsqKZ6U.jpg?size=867x867&quality=95&sign=edd8340edddc046be371362ff7cdd5cf&type=album", followed: true, fullname: 'Sasha', status: 'Hi how are you?',  location: {city: "Moscow", country: "Russia"}},
-        {id: 3, photoUrl: "https://sun9-38.userapi.com/impf/kEZoN0leykKAeghQGTk_TFt2mo7_eBbuDxDrWg/a4zgUsqKZ6U.jpg?size=867x867&quality=95&sign=edd8340edddc046be371362ff7cdd5cf&type=album", followed: false, fullname: 'Andrew', status: 'Hi how are you?',  location: {city: "Kiev", country: "Ukraine"}},
-    ]
-
+    friends: [],
+    pageSize: 5,
+    totalFriendsCount: 20,
+    currentPage:2,
 }
-
+    
 
 const friendsReducer = (state=initialState, action) =>{
     switch(action.type){
@@ -34,7 +33,10 @@ const friendsReducer = (state=initialState, action) =>{
         }
 
         case SET_USERS:
-            return {...state.friends, ...action.friends}
+            return {...state, friends: [...action.friends]}
+
+        case SET_CURRENT_PAGE:
+            return {...state, currentPage: action.currentPage}
         default:
             return state;
     }
@@ -51,6 +53,10 @@ export const unfollowedActionCreator = (friendsId) => {
 
 export const setUserActionCreator = (friends) => {
     return {type: SET_USERS, friends}
+}   
+
+export const setCurrentPageActionCreator = (currentPage) => {
+    return {type: SET_CURRENT_PAGE, currentPage}
 }   
 
 export default friendsReducer;
