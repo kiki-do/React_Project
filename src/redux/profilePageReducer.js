@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
+const GET_PROFILE = 'GET_PROFILE';
 
 
 let initialState = {
@@ -8,7 +9,8 @@ let initialState = {
     {message:'Fuck you? '}
     ],
 
-    newPostText:' '
+    newPostText:' ',
+    profile:null,
 };
 
 const profilePageReducer = (state=initialState, action) => {
@@ -29,6 +31,10 @@ const profilePageReducer = (state=initialState, action) => {
             stateCopy.newPostText = action.newText;
             return stateCopy;
         }
+
+        case GET_PROFILE:{
+            return  {...state, profile: action.profile}
+        }
         
         default: return state;
     }  
@@ -41,6 +47,9 @@ export const addPostActionCreator = () => {
 export const updatePostTextCreator = (text) => {
         return {type: UPDATE_POST_TEXT, newText: text}
 }
-      
+
+export const getProfile = (profile) => {
+    return {type: GET_PROFILE, profile}
+}
 
 export default profilePageReducer;
