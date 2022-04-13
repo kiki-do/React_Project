@@ -10,7 +10,7 @@ let initialState = {
     ],
 
     newPostText:' ',
-    profile:null,
+    profile: null,
 };
 
 const profilePageReducer = (state=initialState, action) => {

@@ -11,3 +11,13 @@
     width: 30px;
   
   }
+
+  .login__block{
+    float: right;
+  }
+  
+  .login__block a{
+    color: white;
+    font-size: 25px;
+  }
+  
